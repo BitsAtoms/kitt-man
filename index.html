@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KITT-MAN</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="arcade">
+  <img class="logo-img" src="assets/kittman-logo.png" alt="KITT-MAN">
+
+  <div class="hud">
+    <div class="hud-block">
+      <span class="hud-label">SCORE</span>
+      <span class="hud-value" id="score">00</span>
+    </div>
+    <div class="hud-block">
+      <span class="hud-label">LIVES</span>
+      <span class="hud-value" id="lives"></span>
+    </div>
+  </div>
+
+  <div class="screen">
+    <canvas id="board"></canvas>
+    <audio id="pacmanTheme" preload="auto" src="assets/pacman-theme.webm"></audio>
+    <audio id="pacmanChomp" preload="auto" src="assets/pacman-chomp.wav"></audio>
+
+    <div class="overlay" id="readyOverlay">
+      <p class="ready-text">READY!</p>
+    </div>
+
+    <div class="overlay hidden" id="gameoverOverlay">
+      <p class="big-text">GAME OVER</p>
+      <p class="score-text">Puntuación: <span id="finalScoreLose">0</span></p>
+      <button class="arcade-btn" id="retryBtnLose">REINTENTAR</button>
+    </div>
+
+    <div class="overlay hidden" id="winOverlay">
+      <p class="big-text win">¡GANASTE!</p>
+      <p class="score-text">Puntuación: <span id="finalScoreWin">0</span></p>
+      <button class="arcade-btn" id="retryBtnWin">JUGAR OTRA VEZ</button>
+    </div>
+  </div>
+</div>
+
+<script src="sound.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

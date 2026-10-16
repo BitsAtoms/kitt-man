@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Press+Start+2P&display=swap');
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+html,body{
+  height:100%;
+  background:#000;
+  color:#fff;
+  font-family:'Press Start 2P', cursive;
+  overflow:hidden;
+}
+
+body{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+}
+
+
+
+
+.arcade{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  padding:20px;
+}
+
+.logo-img{
+  max-width:min(90vw, 560px);
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.hud{
+  display:flex;
+  gap:40px;
+  font-size:.7rem;
+}
+.hud-block{ display:flex; flex-direction:column; align-items:center; gap:6px; }
+.hud-label{ color:#7c8aa5; }
+.hud-value{ color:#fff; font-size:.9rem; }
+
+#lives{
+  display:flex;
+  gap:6px;
+  min-height:16px;
+}
+.life-icon{
+  width:16px; height:16px;
+  border-radius:50%;
+  background:#ff2b2b;
+  box-shadow:0 0 6px #ff2b2b;
+}
+
+.screen{
+  position:relative;
+  border:6px solid #2121de;
+  border-radius:10px;
+  box-shadow:0 0 0 3px #000, 0 0 24px rgba(33,33,222,.7);
+  background:#000;
+  line-height:0;
+}
+
+#board{ display:block; background:#000; max-width:calc(100vw - 48px); max-height:calc(100dvh - 190px); width:auto; height:auto; }
+.logo-img{ max-height:12vh; width:auto; max-width:90vw; }
+
+.overlay{
+  position:absolute; inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  background:rgba(0,0,0,.75);
+  text-align:center;
+}
+.overlay.hidden{ display:none; }
+
+.ready-text{
+  color:#ffd23f;
+  font-size:1rem;
+  letter-spacing:2px;
+  text-shadow:0 0 10px rgba(255,210,63,.8);
+  animation:readyBlink 1s steps(2) infinite;
+}
+@keyframes readyBlink{ 50%{ opacity:.3; } }
+
+.big-text{
+  font-size:1.3rem;
+  color:#ff2b2b;
+  text-shadow:0 0 14px rgba(255,43,43,.8);
+  letter-spacing:2px;
+}
+.big-text.win{ color:#ffd23f; text-shadow:0 0 14px rgba(255,210,63,.8); }
+
+.score-text{
+  font-size:.7rem;
+  color:#e9edf5;
+}
+
+.countdown-text{
+  font-size:.55rem;
+  color:#7c8aa5;
+}
+
+.arcade-btn{
+  font-family:'Press Start 2P', cursive;
+  font-size:.65rem;
+  padding:12px 20px;
+  border-radius:8px;
+  border:2px solid #ffd23f;
+  background:transparent;
+  color:#ffd23f;
+  cursor:pointer;
+  letter-spacing:1px;
+}
+.arcade-btn:hover{ background:#ffd23f; color:#000; }
+
+
